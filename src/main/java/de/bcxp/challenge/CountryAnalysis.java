@@ -15,7 +15,9 @@ public class CountryAnalysis {
                 //save the value of population and area to double for calculation
                 try {
                     double countryPopulation = Double.parseDouble(row[3]);
+                    System.out.println(countryPopulation);
                     double countryArea = Double.parseDouble(row[4]);
+                    System.out.println(countryArea);
                     double density = countryPopulation / countryArea;
 
                     if (density > highestDensity) {
