@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class CsvReader {
 
-    // take in csv file
+    // take in file name and return a list of string arrays with content of given file
     public List<String[]> readFile(String fileName) throws IOException {
         
         List<String[]> fileContent = new ArrayList<>();

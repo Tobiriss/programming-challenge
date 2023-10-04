@@ -19,13 +19,16 @@ public final class App {
         // Your preparation code …
         CsvReader reader = new CsvReader();
         WeatherAnalysis lowestTemp = new WeatherAnalysis();
+        CountryAnalysis highestDensity = new CountryAnalysis();
 
         List<String[]> weatherContent = reader.readFile("weather.csv");
+        List<String[]> countryContent = reader.readFile("countries.csv");
 
-        String dayWithSmallestTempSpread = lowestTemp.findSmallestTempSpread(weatherContent); // Your day analysis function call …
+        String dayWithSmallestTempSpread = lowestTemp.findSmallestTempSpread(weatherContent);
         System.out.printf("Day with smallest temperature spread: %s%n", dayWithSmallestTempSpread);
 
-        String countryWithHighestPopulationDensity = "Some country"; // Your population density analysis function call …
+        //prints out null - not sure why
+        String countryWithHighestPopulationDensity = highestDensity.findCountryWithHighestDensity(countryContent);
         System.out.printf("Country with highest population density: %s%n", countryWithHighestPopulationDensity);
     }
 

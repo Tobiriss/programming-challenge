@@ -4,15 +4,15 @@ import java.util.List;
 
 public class WeatherAnalysis {
 
-    public String findSmallestTempSpread(List<String[]> csvFileData) {
+    public String findSmallestTempSpread(List<String[]> fileData) {
 
         String dayWithLowestSpread = null;
         double lowestCurrentTempSpread = Double.MAX_VALUE;
 
         // iterate over every row
-        for (String[] row : csvFileData) {
-            //check if there are more columns than day, mxt and mnt
-            if (row.length >= 3) {
+        for (String[] row : fileData) {
+            //check if there are at least column 1 to 3 (day, mxt, mnt)
+            if (row.length >= 2) {
                 //save the value of strings mxt and mnt to double for calculation
                 try {
                     double maxTemp = Double.parseDouble(row[1]);
@@ -25,7 +25,7 @@ public class WeatherAnalysis {
                         dayWithLowestSpread = row[0];
                     }
                 } catch (NumberFormatException e) {
-                    
+                    System.out.println(e);
                 }
             }
         }
