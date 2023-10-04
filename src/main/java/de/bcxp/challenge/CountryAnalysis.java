@@ -6,7 +6,7 @@ public class CountryAnalysis {
     public String findCountryWithHighestDensity(List<String[]> fileData) {
 
         String countryWithHighestDensity = null;
-        double highestDensity = Double.MAX_VALUE;
+        double highestDensity = Double.MIN_VALUE;
 
         // iterate over every row
         for (String[] row : fileData) {
